@@ -1,0 +1,4 @@
+data/*
+!data/.gitinclude
+oc-mirror-workspace/
+.oc-mirror.log

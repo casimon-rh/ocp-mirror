@@ -1,0 +1,1 @@
+oc-mirror --config=./imageset-config.yaml docker://provision.ocp.example.com:5001/mirror/oc-mirror-metadata --dest-skip-tls

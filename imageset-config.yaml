@@ -1,0 +1,31 @@
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v1alpha2
+storageConfig:
+  registry:
+    imageURL: provision.ocp.example.com:5001/mirror/oc-mirror-metadata
+    skipTLS: true
+mirror:
+  platform:
+    channels:
+    - name: stable-4.12
+      type: ocp
+    graph: true
+  operators:
+  - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.12
+    packages:
+    - name: cluster-logging
+      channels:
+      - name: stable
+      - name: stable-5.7
+    - name: openshift-pipelines-operator-rh
+      channels:
+      - name: latest
+      - name: pipelines-1.10
+    - name: elasticsearch-operator
+      channels:
+      - name: stable
+      - name: stable-5.7
+  additionalImages:
+  - name: registry.redhat.io/ubi8/ubi:latest
+  - name: registry.redhat.io/ubi8/openjdk-11:latest
+  helm: {}
