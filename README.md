@@ -13,8 +13,10 @@ The following scripts follow the path to create a mirror in a docker-registry co
 
 * The machine where the operation is running is labeled as _provision.ocp.example.com_ change all references if necessary
 * The custom certificates are related to this hostname, recreate if necessary
+* The custom certificates should be added to trusted anchors ```cp certs/$HOST.crt /etc/pki/ca-trust/source/anchors/. && update-ca-trust``` 
 * The pull secret file (pull-secret.txt) that is obtained in https://console.redhat.com/openshift/create is downloaded, valid and placed in the "secrets/" directory
 * The authentication for the docker-registry is dummy:dummy, change and recreate auth data if necessary
+* You must login to the mirror registry before running 3-mirror.sh
 
 ## Operators
 
